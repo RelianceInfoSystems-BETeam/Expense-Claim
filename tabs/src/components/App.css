@@ -1,0 +1,74 @@
+.container-fluid {
+  margin: 0px ;
+  padding: 10px 10px;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.filter-container {
+  background-color: gainsboro;
+  padding: 10px;
+  margin-top: 0px;
+}
+
+
+.button {
+    background-color: #5B5FC7; 
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+  }
+
+.button-delete {
+  background-color: white; 
+  border: 1;
+  border-color: red;
+  border-radius: 5px;
+  color: red;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  height: 20px;
+}
+  
+  .dropdown-menu {
+    width: fit-content;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+  }
+
+
+  
+  .tab {
+   color: aqua;
+  }
+
+  .card {
+    margin: 10px 1px;
+    width: 100%;
+  }
+
+.card-header {
+    background-color: #C5CBFA;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+    margin: 0px;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.icon-blue {
+  color: #5B5FC7;
+}

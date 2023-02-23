@@ -1,0 +1,18 @@
+{
+    "$schema": "https://aka.ms/teamsfx-env-config-schema",
+    "description": "You can customize the TeamsFx config for different environments. Visit https://aka.ms/teamsfx-env-config to learn more about this.",
+    "manifest": {
+        "appName": {
+            "short": "ExpenseClaim",
+            "full": "Full name for ExpenseClaim"
+        },
+        "description": {
+            "short": "Short description of ExpenseClaim",
+            "full": "Full description of ExpenseClaim"
+        },
+        "icons": {
+            "color": "resources/color.png",
+            "outline": "resources/outline.png"
+        }
+    }
+}
