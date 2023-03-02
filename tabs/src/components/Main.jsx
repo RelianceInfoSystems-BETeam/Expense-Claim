@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-//import { Header } from './Expense/Header';
+import React, { useState, useContext } from 'react';
+import { useData } from "@microsoft/teamsfx-react";
+import { TeamsFxContext } from "./Context";
 import Modal from 'react-bootstrap/Modal';
 import { AppProvider } from './Context/AppContext';
 import ExpenseTotal from './Expense/ExpenseTotal';
@@ -16,6 +17,16 @@ function Main() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const { teamsUserCredential } = useContext(TeamsFxContext);
+  const { loading, data, error } = useData(async () => {
+    if (teamsUserCredential) {
+      const userInfo = await teamsUserCredential.getUserInfo();
+      return userInfo;
+    }
+  });
+  const userName = (loading || error) ? "" : data.displayName;
+
+
   return (
     <AppProvider>
 			<div className='container-fluid'>
@@ -25,16 +36,61 @@ function Main() {
                 Add Expense Entry
               </button>
             </h1>
-				<div className='card-body row mt-3'>
-					<div className='col-sm'>
-						
-					</div>
-					<div className='col-sm'>
-						<ExpenseTotal />
-					</div>
-					<div className='col-sm'>
-              <Remaining />
-					</div>
+				<div className='card-body row '>
+					
+              <div class="col-4">
+                    <div class="card">
+                      <div class="card-content">
+                        <div class="card-body">
+                          <div class="media d-flex">
+                            <div class="media-body text-left">
+                              <h3 class="success">Welcome</h3>
+                              <span>{userName ? " " + userName : ""}!</span>
+                            </div>
+                            <div class="align-self-center">
+                              <i class="bi bi-person-fill success font-large-2 float-right" ></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+              <div class="card">
+                <div class="card-content">
+                  <div class="card-body">
+                    <div class="media d-flex">
+                      <div class="media-body text-left">
+                        <h3 class="success"><ExpenseTotal/></h3>
+                        <span>Total Amount Spent</span>
+                      </div>
+                      <div class="align-self-center">
+                        <i class="icon bi bi-cash success font-large-2 float-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="card">
+                <div class="card-content">
+                  <div class="card-body">
+                    <div class="media d-flex">
+                      <div class="media-body text-left">
+                        <h3 class="success"><Remaining/></h3>
+                        <span>Total Reimbursement</span>
+                      </div>
+                      <div class="align-self-center">
+                        <i class="icon bi bi-wallet success font-large-2 float-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 				</div>
         </div>
         <div className='card'>

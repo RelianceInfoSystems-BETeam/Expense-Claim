@@ -29,8 +29,8 @@ const ExpenseList = () => {
 
 	return (
 		<div>
-		<div className="filter-container mt-0 row mb-2 justify-content-end">
-			<div className='row input-group w-50'>
+		<div className="filter-container mt-0 row mb-4 justify-content-end">
+			<div className='row input-group w-100'>
 				<div className="col-1"></div>
 				<select
 					className='col-3 w-10'
@@ -61,7 +61,7 @@ const ExpenseList = () => {
 			</div>
 		</div>
 
-			<ul class='list-group mt-3 mb-3 rounded-0'>
+			<ul class='list-group mb-3 rounded-0'>
 			<div className='row align-items-start'>
 				<h6 className='col-3 fw-semibold'>Name</h6>
 				<h6 className='col-3 fw-semibold'>Cost</h6>

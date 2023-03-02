@@ -8,11 +8,11 @@ const RemainingBudget = () => {
 		return (total += item.cost);
 	}, 0);
 
-	const alertType = totalExpenses > budget ? 'alert-danger' : 'alert-success';
+	//const alertType = totalExpenses > budget ? 'alert-danger' : 'alert-success';
 
 	return (
-		<div class={`alert p-4 ${alertType}`}>
-			<span>Total Reimbursed: £{budget - totalExpenses}</span>
+		<div>
+			<span> £{budget - totalExpenses}</span>
 		</div>
 	);
 };

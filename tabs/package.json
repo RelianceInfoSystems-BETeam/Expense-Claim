@@ -11,6 +11,7 @@
         "@microsoft/teams-js": "^2.7.1",
         "@microsoft/teamsfx": "^2.0.0",
         "@microsoft/teamsfx-react": "^2.0.0",
+        "@table-library/react-table-library": "^4.0.28",
         "antd": "^5.2.2",
         "axios": "^0.21.1",
         "bootstrap": "^5.2.3",
@@ -25,8 +26,10 @@
         "yup": "^1.0.0"
     },
     "devDependencies": {
+        "concurrently": "^7.6.0",
         "cross-env": "^7.0.3",
-        "env-cmd": "^10.1.0"
+        "env-cmd": "^10.1.0",
+        "nodemon": "^2.0.20"
     },
     "scripts": {
         "dev:teamsfx": "env-cmd --silent -f .env.teamsfx.local npm run start",
