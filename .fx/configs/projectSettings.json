@@ -30,7 +30,8 @@
             "name": "teams-api",
             "hosting": "azure-function",
             "functionNames": [
-                "getUserProfile"
+                "getUserProfile",
+                "server"
             ],
             "deploy": true,
             "build": true,

@@ -131,7 +131,7 @@ export default function Configuration({ apiClient }) {
                                                 </Form.Group>
                                             </Form>
 
-                                            <Button type="submit" className='button float-right'>Add Record</Button>
+                                            <Button type="submit" onSubmit={handleSubmitCurrency} className='button float-right'>Add Record</Button>
                                         </div>
                                     </div>
                                 </div>

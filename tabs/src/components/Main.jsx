@@ -7,9 +7,11 @@ import ExpenseTotal from './Expense/ExpenseTotal';
 import ExpenseList from './Expense/ExpenseList';
 import AddExpenseForm from './Expense/AddExpenseForm';
 import Remaining from './Expense/Remaining';
+import { FaMoneyBillWave, FaUserAlt , FaWallet} from 'react-icons/fa';
 
 
 import './App.css';
+
 
 function Main() {
   const [show, setShow] = useState(false);
@@ -25,6 +27,12 @@ function Main() {
     }
   });
   const userName = (loading || error) ? "" : data.displayName;
+
+  
+  const teamsUserCredentials = useContext(TeamsFxContext).teamsUserCredential;
+(async () => {const token = (await teamsUserCredentials.getToken("")).token;
+console.log("....................", token) })()
+
 
 
   return (
@@ -43,12 +51,12 @@ function Main() {
                       <div class="card-content">
                         <div class="card-body">
                           <div class="media d-flex">
-                            <div class="media-body text-left">
-                              <h3 class="success">Welcome</h3>
+                            <div class="media-body text-left col-10">
+                              <h3 class="">Welcome</h3>
                               <span>{userName ? " " + userName : ""}!</span>
                             </div>
-                            <div class="align-self-center">
-                              <i class="bi bi-person-fill success font-large-2 float-right" ></i>
+                            <div class="align-self-center justify-content-end float-right d-flex">
+                            <FaUserAlt className='icn'/>
                             </div>
                           </div>
                         </div>
@@ -61,12 +69,12 @@ function Main() {
                 <div class="card-content">
                   <div class="card-body">
                     <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="success"><ExpenseTotal/></h3>
+                      <div class="media-body text-left col-10">
+                        <h3 class=""><ExpenseTotal/></h3>
                         <span>Total Amount Spent</span>
                       </div>
-                      <div class="align-self-center">
-                        <i class="icon bi bi-cash success font-large-2 float-right"></i>
+                      <div class="align-self-center justify-content-end float-right ">
+                      <FaMoneyBillWave className='icn'/>
                       </div>
                     </div>
                   </div>
@@ -79,12 +87,12 @@ function Main() {
                 <div class="card-content">
                   <div class="card-body">
                     <div class="media d-flex">
-                      <div class="media-body text-left">
-                        <h3 class="success"><Remaining/></h3>
+                      <div class="media-body text-left col-10">
+                        <h3 class=""><Remaining/></h3>
                         <span>Total Reimbursement</span>
                       </div>
                       <div class="align-self-center">
-                        <i class="icon bi bi-wallet success font-large-2 float-right"></i>
+                      <FaWallet className='icn'/>
                       </div>
                     </div>
                   </div>

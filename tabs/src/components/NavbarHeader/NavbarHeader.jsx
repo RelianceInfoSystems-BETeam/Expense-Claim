@@ -8,7 +8,7 @@ const NavbarHeader = () => {
  
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+    <Navbar collapseOnSelect className="Nav" expand="lg" >
     <Container>
       <Navbar.Brand href=""></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />

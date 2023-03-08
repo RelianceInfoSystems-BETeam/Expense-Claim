@@ -262,7 +262,7 @@ const AddExpenseEntry = (props) => {
             <Modal.Body>
               <Tabs defaultActiveKey="basic">
                 <Tab eventKey="basic" title="Basic">
-                  <br />
++                  <br />
                   <Row>
                     <Form.Group as={Col} controlId="projectName">
                       <Form.Label>

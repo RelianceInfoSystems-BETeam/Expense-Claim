@@ -67,7 +67,9 @@ module.exports = async function (context, req, teamsfxContext) {
     }
 
     // get access token through on-behalf-of flow
-    let accessToken = await getAccessToken(ssoToken);
+    // let accessToken = await getAccessToken(ssoToken);
+
+    await test()
 
     // Primary routing
     let routeResponse;
@@ -113,6 +115,15 @@ module.exports = async function (context, req, teamsfxContext) {
   }
 };
 
+async function test () {
+  console.log(".....................reached here")
+  let query = `select RequestID as id, userId, Name, Amount, Description, Date, Status, Method, Attachment, Status from dbo.Expenses`
+  let connection = getSQLConnection();
+  let result = await execQuery(query, connection);
+  console.log('...',result) ;
+  
+}
+
 // functions to handle requests based on request method and secondary routing
 async function getRequestHandler(accessToken, route, queryParams) {
   let data, query;
@@ -131,7 +142,7 @@ async function getRequestHandler(accessToken, route, queryParams) {
       } else {
         query = "select leaveRequestId as id, userId, fullName, email, department, jobTitle, managerId, managerFullName, managerEmail, type, leaveType, startDate, endDate, totalDays, reason, approvalStatus from dbo.LeaveRequest"
       }*/
-      query = `select RequestID as id, userId, Name, Amount, Description, Date, Status, Method, Attachment, Status from dbo.Expense where RequestID = ${queryParams[(Object.keys(queryParams)[0])]}`
+      query = `select RequestID as id, userId, Name, Amount, Description, Date, Status, Method, Attachment, Status from dbo.Expenses` //where RequestID = ${queryParams[(Object.keys(queryParams)[0])]}`
       break;
     case "ApprovalLog":
       query = `select id, ExpenseID, 'ApprovalName', 'ApprovalTime', 'ApprovalStatus', Comment from dbo.ApprovalLog where ExpenseID = ${queryParams[(Object.keys(queryParams)[0])]}`

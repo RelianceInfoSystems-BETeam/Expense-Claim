@@ -27,6 +27,8 @@ const ExpenseList = () => {
 	console.log(dates)
   
 
+	
+
 	return (
 		<div>
 		<div className="filter-container mt-0 row mb-4 justify-content-end">
@@ -61,23 +63,32 @@ const ExpenseList = () => {
 			</div>
 		</div>
 
-			<ul class='list-group mb-3 rounded-0'>
-			<div className='row align-items-start'>
-				<h6 className='col-3 fw-semibold'>Name</h6>
-				<h6 className='col-3 fw-semibold'>Cost</h6>
-				<h6 className='col-3 fw-semibold'>Status</h6>
-				<h6 className='col-2 fw-semibold'>Date</h6>
-			</div>
-				{filteredExpenses.map((expense) => (
-					<ExpenseItem
-						id={expense.id}
-						name={expense.name}
-						cost={expense.cost}
-						status={expense.status}
-						date={expense.date}
-					/>
-				))}
-			</ul>
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Item</th>
+						<th>Cost</th>
+						<th>Status</th>
+						<th> Date (Days)</th>
+					</tr>
+				</thead>
+						{filteredExpenses.map((expense, key) => {
+							return(
+							<tbody>
+								<tr key={ExpenseItem}>
+									<td>{expense.id}</td>
+									<td>{expense.name}</td>
+									<td>{expense.cost}</td>
+									<td>{expense.status}</td>
+									<td>{expense.date}</td>
+									</tr>
+									</tbody>
+									) 
+								}
+								)
+							}
+			</table>
 		</div>
 	);
 };

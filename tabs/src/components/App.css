@@ -13,6 +13,9 @@
   margin-top: 0px !important;
 }
 
+.Nav{
+  background-color: #f8f9fa;
+}
 
 .button {
     background-color: #5B5FC7; 
@@ -80,13 +83,27 @@
   color: #5B5FC7;
 }
 
-.success{
+
+
+.icn {
+  width: 40px !important;
+  height: 40px !important;
   color: green !important;
 }
 
-.icon {
-  width: 60px !important;
-  height: 60px !important;
-  float: right !important;
 
-}
+table { 
+  width: 100%; 
+  border-collapse: collapse !important; 
+  
+  }
+
+  th, td {
+    border-top: 1px solid #5B5FC7;
+    padding: 9px 18px !important; 
+  }
+  th { 
+     border-top: none !important;
+     font-size: 14px; text-align: left;
+    }
+    td {font-size: 12px;}
